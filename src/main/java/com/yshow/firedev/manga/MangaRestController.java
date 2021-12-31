@@ -28,7 +28,7 @@ public class MangaRestController {
 	      .exchangeToMono(response -> response.bodyToMono(Object.class));
     }
     /**
-     * Para ver todos os filtros por favor consulte {@link https://kitsu.docs.apiary.io} 
+     * Para ver todos os filtros por favor consulte <a href="https://kitsu.docs.apiary.io">kitsu</a>
      * @param filtro Tipo do filtro para retornar na api, exemplo: year
      * @param texto O texto usado para passar no filtro, exemplo: 2021
      * @return JSON
