@@ -10,6 +10,10 @@ import org.springframework.web.reactive.function.client.WebClient;
  */
 @Configuration
 public class KitsuClient{
+    /**
+     * Bean para criar o webclient com os requisitos da kitsu
+     * @return <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html">WebClient</a>
+     */
     @Bean
     public WebClient kitsuWebClient() {
 	/*

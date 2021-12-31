@@ -11,7 +11,6 @@ Minha tentaiva em fazer o desafio Kitsu da Firedev
 [Maven](https://maven.apache.org)
 
 [Git](https://git-scm.com)
-##
 
 ## Instruções para compilar e rodar
 1. Certifique que JAVA_HOME aponta para a versao do java 17 ou mais
