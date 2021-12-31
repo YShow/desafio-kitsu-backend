@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.yshow</groupId>
 	<artifactId>firedev</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>desafio</name>
 	<description>Projeto para vaga na empresa Firedev</description>
 	<properties>
@@ -32,8 +32,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.3</version>
+		</dependency>
 	</dependencies>
- 
+
 	<build>
 		<plugins>
 			<plugin>
