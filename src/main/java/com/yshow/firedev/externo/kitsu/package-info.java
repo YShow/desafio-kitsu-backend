@@ -1,5 +1,4 @@
 /**
- * Modulos externos devem ser criados neste package
- * @author Yasser Bazzi
+ * Modulo externo para a api kitsu
  */
 package com.yshow.firedev.externo.kitsu;
