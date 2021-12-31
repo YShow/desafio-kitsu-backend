@@ -1,9 +1,13 @@
-package com.yshow.firedev;
+package com.yshow.firedev.externo.kitsu;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
+
+/**
+ * Bean para conectar a api <a href="https://kitsu.docs.apiary.io">kitsu</a>
+ * @author Yasser Bazz
+ */
 @Configuration
 public class KitsuClient{
     @Bean

@@ -1,4 +1,4 @@
-package com.yshow.firedev.anime;
+package com.yshow.firedev.rest.anime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +10,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import reactor.core.publisher.Mono;
 
+/**
+ * Controller para rest api de animes
+ * @author Yasser Bazzi
+ */
 @RestController
 public class AnimeRestController {
     @Autowired
@@ -74,7 +78,7 @@ public class AnimeRestController {
 	     /*
 	      * o id é uma key para identificar o anime na api
 	      */
-	     final String id = filtrarId(animes);
+	     final int id = filtrarId(animes);
 	     /*
 	      * Em vez de usar uma logica propria sera usado a json api para ver o episodio
 	      * https://kitsu.docs.apiary.io/#introduction/json:api/filtering-and-search. Na
@@ -89,10 +93,14 @@ public class AnimeRestController {
 	 return resposta;
      }
      
-     
-    private static final String filtrarId(final JsonNode animes)
+    
+    private static final int filtrarId(final JsonNode animes)
     {
+	/*
+	 * O json retornado pela api utiliza a estrutura data[array]{valores}
+	 *  no caso precisamos apenas do id
+	 */
 	return animes.get("data").get(0)
-		      .get("id").asText();
+		      .get("id").asInt();
     }
 }

@@ -1,4 +1,4 @@
-package com.yshow.firedev.manga;
+package com.yshow.firedev.rest.manga;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +8,11 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import reactor.core.publisher.Mono;
 
+
+/**
+ * Controller para rest api de mangas
+ * @author Yasser Bazzi
+ */
 @RestController
 public class MangaRestController {
     
