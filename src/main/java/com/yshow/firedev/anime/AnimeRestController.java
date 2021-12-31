@@ -1,7 +1,5 @@
 package com.yshow.firedev.anime;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.yshow.firedev.KitsuClient;
 
 import reactor.core.publisher.Mono;
 
@@ -21,21 +18,34 @@ public class AnimeRestController {
     public AnimeRestController(WebClient kitsuWebClient) {
 	this.kitsuWebClient = kitsuWebClient;
     }
-    
+    /**
+     * Retorna os animes populares do momento
+     * @return JSON
+     */
     @GetMapping("/anime/populares")
-    Mono<Object> populares() {
+    public Mono<Object> populares() {
       return kitsuWebClient.get()
 	      .uri("/trending/anime")
 	      .exchangeToMono(response -> response.bodyToMono(Object.class));
     }
     
+    /**
+     * Para ver todos os filtros por favor consulte <a href="https://kitsu.docs.apiary.io">kitsu</a>
+     * @param filtro Tipo do filtro para retornar na api, exemplo: year
+     * @param texto O texto usado para passar no filtro, exemplo: 2021
+     * @return JSON
+     */
     @GetMapping("/anime/filtrar")
     public Mono<Object> pesquisarPorFiltro(@RequestParam String filtro,@RequestParam String texto) {
  	return kitsuWebClient.get()
  		      .uri("anime?filter[{filtro}]={texto}",filtro,texto)
  		      .exchangeToMono(response -> response.bodyToMono(Object.class));
      }
-     
+     /**
+      * Pesquisa mangas filtrando por nome
+      * @param nomeAnime Nome do anime para pesquisar
+      * @return JSON
+      */
      @GetMapping("/anime")
      public Mono<Object> pesquisarAnime(@RequestParam(name = "nome") String nomeAnime){	
  	return kitsuWebClient.get()
@@ -43,7 +53,12 @@ public class AnimeRestController {
  		      .exchangeToMono(response -> response.bodyToMono(Object.class));
      }
      
-     
+     /**
+      * Pesquisa um episodio pelo nome do anime
+      * @param nomeAnime Nome do anime
+      * @param episodio Numero do episodio para procurar
+      * @return JSON
+      */
      @GetMapping("/anime/episodio")
      public Mono<JsonNode> pesquisarAnimeEpisodio(@RequestParam(name = "nome") String nomeAnime,
 	     @RequestParam(name = "ep") Integer episodio) {
