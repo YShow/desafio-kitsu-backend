@@ -1,5 +1,5 @@
 # Desafio Kitsu - Firedev IT
-Minha tentaiva em fazer o desafio Kitsu da Firedev
+Minha tentativa em fazer o desafio Kitsu da Firedev
 
 ## Tecnologias
 [Spring Framework](https://spring.io)
