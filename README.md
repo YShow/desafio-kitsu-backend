@@ -18,7 +18,7 @@ Minha tentativa em fazer o desafio Kitsu da Firedev
 3. Execute o jar com o comando `java -jar firedev-1.0.0.jar`
 
 ## Documentação da api
-Documentação feita em OpenAPI, acesse pelo link [http://localhost:8080/v3/api-docs/](http://localhost:8080/v3/api-docs/)
+Documentação feita em OpenAPI, acesse pelo link [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 ## Documentação do codigo
 Documentação javadocs pode ser gerado usando o comando `mvnw clean javadoc:javadoc`
